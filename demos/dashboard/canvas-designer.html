@@ -241,7 +241,8 @@ designer.addSyncListener(function(data) {
 });
 
 var isteacher = sessionStorage.getItem("isadmin");
-if(isteacher){
+var isstudent= sessionStorage.getItem("isuser");	
+if(isteacher=="admin"){
 
 designer.setTools({
     pencil: true,
@@ -265,7 +266,8 @@ designer.setTools({
     code: false,
     undo: true
 });
-}else
+}
+if(isstudent=="user")
 {
 	designer.setTools({
     pencil: false,
