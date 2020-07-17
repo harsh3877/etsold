@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>Video OneWay Broadcasting using RTCMultiConnection</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+  <link rel="shortcut icon" href="/demos/logo.png">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" >
+  <link href="/demos/dashboard/stylecss.css" rel="stylesheet">
+ 
+<style>
+
+.media-container:nth-child(1){
+	width: 80% !important;
+    position: absolute;
+    right: 10px;
+}
+.media-container:nth-child(2){
+	box-shadow:0 0 10px 2px #000;
+    width: 220px !important;
+	border:none;
+}
+@media only screen and (max-width: 425px) {
+.media-container:nth-child(1){
+	width: 90% !important;
+    margin-top: 190px;
+	left:10px !important;
+}
+.logo_text
+{
+	display:none;
+}
+.logo_container img{
+	width:30%;
+}
+.lgbtn{
+	margin-top:-30px !important;
+}
+}
+</style>
+</head>
+<body>
+  
+<div class="container-fluid header py-1 menuholder">
+	<div class="px-3">
+		<div class="float-right py-4">
+			<a class="btn btn-outline-danger btn-sm lgbtn" href="http://localhost/ETS/logout.php" style="margin-top:0;" target="_top">Logout</a>
+		</div>
+		<div class="logo_container" style="display: inline-flex; width: 50%;">
+			<img src="/demos/dashboard/images/logo.png" width="12%">
+			<div class="logo_text" style="margin-left:5px; font-family: sans-serif; font-weight:600; letter-spacing:1px;" >
+                      <p style="display: contents;  color:#000036; font-size:16px;">EFFORT TO SUCCESS</p><br>
+                      <p style="display: contents;  color:#000036; font-size:12px;">Chemical sciences | chemistry</p><br>
+                      <p style="display: contents;  color:#000036; font-size:12px;">Instutute for CSIR-JRF(NET) GATE IIT-JAM</p>
+                  </div>
+		</div>
+	</div>
+</div>
+
+<!--header menu ended--->
+<div class="text-center mt-3">
+    <input type="text" id="room-id" value="abcdef" autocorrect=off autocapitalize=off size=20>
+    <a onclick="openpage()" class="btn btn-success btn-sm text-light">Open Room</a>
+</div>
+
+<script>
+function openpage(){
+var ide = document.getElementById("room-id").value;
+
+sessionStorage.setItem("sessionname", ide);
+sessionStorage.setItem("isadmin","admin");
+
+location.replace("http://localhost:8080");
+
+}
+</script>
+</body>
+</html>
